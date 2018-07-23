@@ -35,6 +35,7 @@ import retrofit2.Response;
 public class NowShowing extends Fragment {
 OnItemClick listner;
 ArrayList<Result> myresults=new ArrayList<>() ;
+MovieMainactivityAdapter adapter;
 
     public NowShowing() {
         // Required empty public constructor
@@ -47,14 +48,14 @@ ArrayList<Result> myresults=new ArrayList<>() ;
         {
             View output = inflater.inflate(R.layout.fragment_now_showing, container, false);
             RecyclerView recyclerView = output.findViewById(R.id.recyclerviewofnowplaying);
-            final MovieMainactivityAdapter adapter = new MovieMainactivityAdapter(output.getContext(), myresults, new MovieClickListner() {
+            adapter = new MovieMainactivityAdapter(output.getContext(), myresults, new MovieClickListner() {
                 @Override
                 public void onpostClciked(View view, int position) {
 
 
                 }
             });
-            recyclerView.setAdapter(adapter);
+
 
 
             recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -63,32 +64,37 @@ ArrayList<Result> myresults=new ArrayList<>() ;
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.addItemDecoration(new DividerItemDecoration(output.getContext(), DividerItemDecoration.VERTICAL));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
+            fetch();
+            recyclerView.setAdapter(adapter);
 
-           
-            Call<MovieDettails> call = RetrofistApiClient.getMovieDBService().getNowPlayingResponse("80379bfe5c660b84e1888e3de33db3bb", 1);
-            call.enqueue(new Callback<MovieDettails>() {
-                @Override
-                public void onResponse(Call<MovieDettails> call, Response<MovieDettails> response) {
-                    MovieDettails movieDettails=response.body();
-                    ArrayList<Result> xy=movieDettails.getGettingresults();
-
-
-                    for(int i=0;i<xy.size();i++){
-                        myresults.add(xy.get(i));
-                    }
-                    Log.d("nowplaying","have reachead");
-                    adapter.notifyDataSetChanged();
-                }
-
-                @Override
-                public void onFailure(Call<MovieDettails> call, Throwable t) {
-                    Toast.makeText(getContext(),"No Connection",Toast.LENGTH_LONG).show();
-                }
-            });
 
             // Inflate the layout for this fragment
             return output;
         }
+
+    }
+    public void fetch(){
+
+        Call<MovieDettails> call = RetrofistApiClient.getMovieDBService().getNowPlayingResponse("b31070658e1781f4048fd8213d7470c4", 1);
+        call.enqueue(new Callback<MovieDettails>() {
+            @Override
+            public void onResponse(Call<MovieDettails> call, Response<MovieDettails> response) {
+                MovieDettails movieDettails=response.body();
+                ArrayList<Result> xy=movieDettails.getGettingresults();
+
+
+                for(int i=0;i<xy.size();i++){
+                    myresults.add(xy.get(i));
+                }
+                Log.d("nowplaying","have reachead");
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<MovieDettails> call, Throwable t) {
+                Toast.makeText(getContext(),"No Connection",Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 }

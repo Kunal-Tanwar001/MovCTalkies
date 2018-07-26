@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.prate.movctalkies.R;
 
 public class RecylerViewHolder extends RecyclerView.ViewHolder{
- Button moviefavourite;
+
  ImageView moviewimage;
  TextView moviename,movieoverview;
 View itemView;
@@ -17,7 +17,7 @@ View itemView;
         super(itemView);
         this.itemView=itemView;
 
-       this.moviefavourite=itemView.findViewById(R.id.moviefavourite);
+
        this.moviewimage=itemView.findViewById(R.id.moviewimage);
        this.moviename=itemView.findViewById(R.id.moviename);
        this.movieoverview=itemView.findViewById(R.id.movieoverview);

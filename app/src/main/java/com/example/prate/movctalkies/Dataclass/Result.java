@@ -14,6 +14,8 @@ public class Result {
     @SerializedName("adult")
     private Boolean mAdult;
     @SerializedName("backdrop_path")
+
+
     private String mBackdropPath;
     @SerializedName("genre_ids")
     private List<Long> mGenreIds;

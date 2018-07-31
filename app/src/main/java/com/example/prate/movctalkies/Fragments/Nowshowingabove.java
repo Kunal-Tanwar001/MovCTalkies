@@ -1,6 +1,7 @@
 package com.example.prate.movctalkies.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.prate.movctalkies.R;
+import com.example.prate.movctalkies.Viewalll.Viewall;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +32,8 @@ Button viewall;
        viewall.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               Intent inetnt=new Intent(getContext(), Viewall.class);
+               startActivity(inetnt);
 
            }
        });

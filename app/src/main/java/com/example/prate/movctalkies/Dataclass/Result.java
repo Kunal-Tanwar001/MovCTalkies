@@ -1,158 +1,92 @@
 
 package com.example.prate.movctalkies.Dataclass;
 
-import android.util.Log;
-
-import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
 
-
+@SuppressWarnings("unused")
 public class Result {
 
-    @SerializedName("adult")
-    private Boolean mAdult;
-    @SerializedName("backdrop_path")
-
-
-    private String mBackdropPath;
-    @SerializedName("genre_ids")
-    private List<Long> mGenreIds;
     @SerializedName("id")
-    private Long mId;
-    @SerializedName("original_language")
-    private String mOriginalLanguage;
-    @SerializedName("original_title")
-    private String mOriginalTitle;
-    @SerializedName("overview")
-    private String mOverview;
-    @SerializedName("popularity")
-    private Double mPopularity;
-    @SerializedName("poster_path")
-    private String mPosterPath;
-    @SerializedName("release_date")
-    private String mReleaseDate;
-    @SerializedName("title")
-    private String mTitle;
-    @SerializedName("video")
-    private Boolean mVideo;
-    @SerializedName("vote_average")
-    private Double mVoteAverage;
-    @SerializedName("vote_count")
-    private Long mVoteCount;
+    private String mId;
+    @SerializedName("iso_3166_1")
+    private String mIso31661;
+    @SerializedName("iso_639_1")
+    private String mIso6391;
+    @SerializedName("key")
+    private String mKey;
+    @SerializedName("name")
+    private String mName;
+    @SerializedName("site")
+    private String mSite;
+    @SerializedName("size")
+    private Long mSize;
+    @SerializedName("type")
+    private String mType;
 
-    public Boolean getAdult() {
-        return mAdult;
-    }
-
-    public void setAdult(Boolean adult) {
-        mAdult = adult;
-    }
-
-    public String getBackdropPath() {
-        return mBackdropPath;
-    }
-
-    public void setBackdropPath(String backdropPath) {
-        mBackdropPath = backdropPath;
-    }
-
-    public List<Long> getGenreIds() {
-        return mGenreIds;
-    }
-
-    public void setGenreIds(List<Long> genreIds) {
-        mGenreIds = genreIds;
-    }
-
-    public Long getId() {
+    public String getId() {
         return mId;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         mId = id;
     }
 
-    public String getOriginalLanguage() {
-        return mOriginalLanguage;
+    public String getIso31661() {
+        return mIso31661;
     }
 
-    public void setOriginalLanguage(String originalLanguage) {
-        mOriginalLanguage = originalLanguage;
+    public void setIso31661(String iso31661) {
+        mIso31661 = iso31661;
     }
 
-    public String getOriginalTitle() {
-        return mOriginalTitle;
+    public String getIso6391() {
+        return mIso6391;
     }
 
-    public void setOriginalTitle(String originalTitle) {
-        mOriginalTitle = originalTitle;
+    public void setIso6391(String iso6391) {
+        mIso6391 = iso6391;
     }
 
-    public String getOverview() {
-        return mOverview;
+    public String getKey() {
+        return mKey;
     }
 
-    public void setOverview(String overview) {
-        mOverview = overview;
+    public void setKey(String key) {
+        mKey = key;
     }
 
-
-    public Double getPopularity() {
-        return mPopularity;
+    public String getName() {
+        return mName;
     }
 
-    public void setPopularity(Double popularity) {
-        mPopularity = popularity;
+    public void setName(String name) {
+        mName = name;
     }
 
-    public String getPosterPath() {
-        return mPosterPath;
+    public String getSite() {
+        return mSite;
     }
 
-    public void setPosterPath(String posterPath) {
-        mPosterPath = posterPath;
+    public void setSite(String site) {
+        mSite = site;
     }
 
-    public String getReleaseDate() {
-        return mReleaseDate;
+    public Long getSize() {
+        return mSize;
     }
 
-    public void setReleaseDate(String releaseDate) {
-        mReleaseDate = releaseDate;
+    public void setSize(Long size) {
+        mSize = size;
     }
 
-    public String getTitle() {
-        return mTitle;
+    public String getType() {
+        return mType;
     }
 
-    public void setTitle(String title) {
-        mTitle = title;
-    }
-
-    public Boolean getVideo() {
-        return mVideo;
-    }
-
-    public void setVideo(Boolean video) {
-        mVideo = video;
-    }
-
-    public Double getVoteAverage() {
-        return mVoteAverage;
-    }
-
-    public void setVoteAverage(Double voteAverage) {
-        mVoteAverage = voteAverage;
-    }
-
-    public Long getVoteCount() {
-        return mVoteCount;
-    }
-
-    public void setVoteCount(Long voteCount) {
-        mVoteCount = voteCount;
+    public void setType(String type) {
+        mType = type;
     }
 
 }

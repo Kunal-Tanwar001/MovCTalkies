@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.prate.movctalkies.Dataclass.Result;
+import com.example.prate.movctalkies.Dataclass.Resultnow;
 import com.example.prate.movctalkies.Fragments.MovieClickListner;
 import com.example.prate.movctalkies.MainActivity;
 import com.example.prate.movctalkies.R;
@@ -19,10 +20,10 @@ import java.util.ArrayList;
 public class MovieMainactivityAdapter extends RecyclerView.Adapter<RecylerViewHolder>  {
 
     Context context;
-    ArrayList<Result> myresults;
+    ArrayList<Resultnow> myresults;
     MovieClickListner movieClickListner;
 
-    public MovieMainactivityAdapter(Context context, ArrayList<Result> myresults, MovieClickListner movieClickListner) {
+    public MovieMainactivityAdapter(Context context, ArrayList<Resultnow> myresults, MovieClickListner movieClickListner) {
         this.context=context;
         this.movieClickListner=movieClickListner;
         this.myresults=myresults;
@@ -40,9 +41,11 @@ public class MovieMainactivityAdapter extends RecyclerView.Adapter<RecylerViewHo
     @Override
     public void onBindViewHolder(@NonNull RecylerViewHolder holder, final int position) {
 
-      Result result=myresults.get(position);
+      Resultnow result=myresults.get(position);
       holder.moviename.setText(result.getOriginalTitle());
       holder.movieoverview.setText(result.getOverview());
+      holder.ratings.setText(result.getVoteAverage()+"");
+
         Picasso.get().load(MainActivity.imageurl+result.getPosterPath()).into(holder.moviewimage);
         Log.d("adapter","photoottt0");
         holder.itemView.setOnClickListener(new View.OnClickListener() {

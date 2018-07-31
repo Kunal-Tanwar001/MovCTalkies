@@ -7,144 +7,174 @@
     tools:context=".ActivitmovieDetails">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        android:fitsSystemWindows="true">
+        android:layout_height="450dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
         <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true"
-            android:id="@+id/collapsingtoolbar">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/toolbarimage"
+
+                android:layout_width="254dp"
+                android:layout_height="430dp"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="pin"
-                />
+                android:layout_gravity="center"/>
 
 
+            <!--<android.support.v7.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="?attr/actionBarSize"-->
+                <!--android:background="?attr/colorPrimary"-->
+                <!--android:elevation="7dp"-->
+                <!--app:popupTheme="@style/AppTheme.PopupOverlay"-->
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:elevation="7dp"
 
-
-            />
+                <!--/>-->
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-   <android.support.v4.widget.NestedScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:id="@+id/fullmoviedetails"
-       app:layout_behavior="@string/appbar_scrolling_view_behavior">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:orientation="vertical"
-           >
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/fullmoviedetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="top|center"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-           <android.support.v7.widget.CardView
-               android:id="@+id/wholediscription1"
-               android:layout_width="match_parent"
-               android:layout_height="131dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-               <LinearLayout
-                   android:id="@+id/wholediscription"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:id="@+id/wholediscription1"
+                android:layout_width="match_parent"
+                android:layout_height="159dp">
 
-                   <ImageView
-                       android:id="@+id/movielowimage"
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:layout_weight="5"
-                       android:scaleType="centerCrop" />
-
-                   <LinearLayout
-                       android:id="@+id/movietiitleandname"
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:layout_weight="3"
-                       android:orientation="vertical">
-
-                       <TextView
-                           android:id="@+id/movietittle1"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-
-                           android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-                       <TextView
-                           android:id="@+id/moviesusupense1"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-                   </LinearLayout>
-               </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="182dp">
 
 
-           </android.support.v7.widget.CardView>
-       <android.support.v7.widget.CardView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/c1">
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="vertical"
-               android:id="@+id/moviebutton">
+                    <ImageView
+                        android:id="@+id/movielowimage"
+                        android:layout_width="155dp"
+                        android:layout_height="161dp"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="11dp"
+                        android:layout_weight="5"
+                        android:scaleType="centerCrop" />
 
 
-               <TextView
-                   android:id="@+id/movieoverview1"
-                   android:layout_width="match_parent"
-                   android:layout_height="68dp"
-                   android:ellipsize="end"
-                   android:maxLines="2"
-                   android:layout_gravity="center"
+                    <TextView
+                        android:id="@+id/movietittle1"
+                        android:layout_width="188dp"
+                        android:layout_height="66dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat"
+                        android:gravity="center"
 
-                   />
 
-               <Button
-                   android:id="@+id/readmore"
-                   android:layout_width="match_parent"
-                   android:layout_height="40dp"
-                   android:layout_gravity="center"
-                   android:background="@color/white"
-                   android:gravity="center"
-                   android:text="ReadMore" />
+                        />
 
-           </LinearLayout>
-       </android.support.v7.widget.CardView>
-       <android.support.v7.widget.RecyclerView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/cast">
+                    <TextView
+                        android:id="@+id/moviesusupense1"
+                        android:layout_width="189dp"
+                        android:layout_height="74dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/movietittle1"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:gravity="center"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat" />
+                </RelativeLayout>
+                </android.support.v7.widget.CardView>
 
-       </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
 
-   </android.support.v4.widget.NestedScrollView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/c1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/moviebutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/movieoverview1"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"
+                        android:layout_gravity="center"
+
+                        android:text="mdmclkdmk"
+
+                        />
+
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:id="@+id/yoview"
+                android:layout_width="match_parent"
+                android:layout_height="307dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+            </com.google.android.youtube.player.YouTubePlayerView>
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/cast"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+
+        </LinearLayout>
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
 
     <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/fab"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom|end"-->
-        <!--android:layout_margin="@dimen/fab_margin"-->
-        <!--app:srcCompat="@android:drawable/ic_dialog_email" />-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--app:srcCompat="@android:drawable/ic_dialog_email" />-->
 
 </android.support.design.widget.CoordinatorLayout>

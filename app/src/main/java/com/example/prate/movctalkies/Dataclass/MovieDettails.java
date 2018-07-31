@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class MovieDettails {
     @SerializedName("results")
-   private ArrayList<Result> gettingresults=new ArrayList<>();
+   private ArrayList<Resultnow> gettingresults=new ArrayList<>();
 
-    public ArrayList<Result> getGettingresults() {
+    public ArrayList<Resultnow> getGettingresults() {
         return gettingresults;
     }
 
-    public void setGettingresults(ArrayList<Result> gettingresults) {
+    public void setGettingresults(ArrayList<Resultnow> gettingresults) {
         this.gettingresults = gettingresults;
     }
 }

@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.prate.movctalkies.ActivitmovieDetails;
 import com.example.prate.movctalkies.Dataclass.MovieDettails;
 import com.example.prate.movctalkies.Dataclass.Result;
+import com.example.prate.movctalkies.Dataclass.Resultnow;
 import com.example.prate.movctalkies.Dataclass.collectingmovieDetails;
 import com.example.prate.movctalkies.MovieAdapter.MovieMainactivityAdapter;
 import com.example.prate.movctalkies.R;
@@ -38,7 +39,7 @@ import retrofit2.Response;
  */
 public class NowShowing extends Fragment {
 OnItemClick listner;
-ArrayList<Result> myresults=new ArrayList<>() ;
+ArrayList<Resultnow> myresults=new ArrayList<>() ;
 MovieMainactivityAdapter adapter;
 
     public NowShowing() {
@@ -93,16 +94,13 @@ MovieMainactivityAdapter adapter;
             @Override
             public void onResponse(Call<MovieDettails> call, Response<MovieDettails> response) {
                 MovieDettails movieDettails=response.body();
-                ArrayList<Result> xy=movieDettails.getGettingresults();
+                ArrayList<Resultnow> xy=movieDettails.getGettingresults();
 
 
                 for(int i=0;i<xy.size();i++){
                     myresults.add(xy.get(i));
                 }
-                if(myresults!=null){
 
-                    Toast.makeText(getContext(),myresults.get(0).getOriginalTitle(),Toast.LENGTH_LONG).show();
-                }
 
                 Log.d("nowplaying","have reachead");
                 adapter.notifyDataSetChanged();

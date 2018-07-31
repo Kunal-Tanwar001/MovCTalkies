@@ -14,6 +14,8 @@ public class RetrofistApiClient {
         private static Retrofit retrofit;
         private static MovieDBService service;
 
+
+
         public static Retrofit getInstance()
         {
             if(retrofit == null)

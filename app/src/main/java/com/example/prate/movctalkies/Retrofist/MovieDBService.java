@@ -3,7 +3,9 @@ package com.example.prate.movctalkies.Retrofist;
 import com.example.prate.movctalkies.Dataclass.CrewResponse;
 import com.example.prate.movctalkies.Dataclass.MovieDettails;
 import com.example.prate.movctalkies.Dataclass.Result;
+import com.example.prate.movctalkies.Dataclass.Youtubepojo;
 import com.example.prate.movctalkies.Dataclass.collectingmovieDetails;
+import com.example.prate.movctalkies.Youtubeapikey;
 
 import java.util.ArrayList;
 
@@ -27,10 +29,13 @@ public interface MovieDBService {
 //    Call<MovieDettails> getUpcomingResponse(@Query("api_key") String apikey);
 
     @GET("{movie_id}")
-    Call<collectingmovieDetails>  gettingallnewmoviedetais(@Path("movie_id")String movieid,@Query("api_key")String apikey);
+    Call<collectingmovieDetails>  gettingallnewmoviedetais(@Path("movie_id")int movieid,@Query("api_key")String apikey);
 
     @GET("{MOVIE_ID}/credits?api_key=80379bfe5c660b84e1888e3de33db3bb")
     Call<CrewResponse> getCrew(@Path("MOVIE_ID") String MOVIE_ID);
 
+
+    @GET("{MOVIE_ID}/videos?api_key=80379bfe5c660b84e1888e3de33db3bb&language=en-US")
+    Call<Youtubepojo>getvideos(@Path("MOVIE_ID")int MOVIE_ID);
 
 }

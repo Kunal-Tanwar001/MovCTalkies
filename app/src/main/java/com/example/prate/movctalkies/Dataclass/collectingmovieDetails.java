@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class collectingmovieDetails {
 
    @SerializedName("belongs_to_collection")
-  public ArrayList<poster>myposter=new ArrayList<>();
+  public poster myposter;
    @SerializedName("original_title")
   public String original_title;
    @SerializedName("overview")
@@ -22,6 +22,6 @@ public class collectingmovieDetails {
     public String poster_path;
 
     @SerializedName("vote_average")
-    public   String ratings;
+    public   String ratingsss;
 }
 

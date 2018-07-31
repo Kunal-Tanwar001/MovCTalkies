@@ -17,18 +17,22 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Viewalll.Viewall" />
         <activity android:name=".MainActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+
         <activity
             android:name=".ActivitmovieDetails"
             android:label="@string/title_activity_activitmovie_details"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".mainyoutube">
+
         </activity>
     </application>
 
